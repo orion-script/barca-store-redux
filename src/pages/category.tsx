@@ -1,9 +1,8 @@
 import React, { useState, useEffect, Fragment } from "react";
-import ContainerLayout from "../Layouts/ContainerLayout";
-import Navbar from "../components/Navbar";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-
+import ContainerLayout from "../Layouts/ContainerLayout";
+import Navbar from "../components/Navbar";
 import ProductCard from "../components/ProductCard";
 import Spinner from "../components/spinner/spinner.component";
 
@@ -38,7 +37,7 @@ const Category = () => {
         {isLoading ? (
           <Spinner />
         ) : (
-          <div className="grid grid-cols-4 gap-x-5 gap-y-12">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-x-5 gap-y-12">
             {products &&
               products.map((product) => (
                 <ProductCard key={product.id} product={product} />

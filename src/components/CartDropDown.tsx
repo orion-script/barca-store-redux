@@ -1,21 +1,27 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 import Button from "./button/button.component";
 import CartItem from "./CartItem";
-import { selectCartItems } from "../store/cart/cart.selector";
+import { selectCartItems, selectIsCartOpen } from "../store/cart/cart.selector";
+import { setIsCartOpen } from "../store/cart/cart.action";
 
 const CartDropdown = () => {
+  const dispatch = useDispatch();
   const cartItems = useSelector(selectCartItems);
+  const isCartOpen = useSelector(selectIsCartOpen);
   const navigate = useNavigate();
+
+  const toggleIsCartOpen = () => dispatch(setIsCartOpen(!isCartOpen));
 
   const goToCheckoutHandler = () => {
     navigate("/checkout");
+    toggleIsCartOpen();
   };
 
   return (
-    <div className="absolute w-60 h-[340px] flex flex-col p-[20px] border border-[#000] bg-[#fff] top-[90px] right-10 z-50">
+    <div className="absolute w-60 h-[340px] flex flex-col p-[20px] border border-[#000] bg-[#fff] top-[90px] right-40 md:right-10 z-50">
       <div className="flex flex-col h-60 overflow-scroll">
         {cartItems.length ? (
           cartItems.map((item) => <CartItem key={item.id} cartItem={item} />)
