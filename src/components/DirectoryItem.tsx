@@ -1,7 +1,7 @@
 import React, { FC } from "react";
-
 import { useNavigate } from "react-router-dom";
-import { DirectoryCategory } from "../types/CategoriesTypes";
+
+import { DirectoryCategory } from "../utils/categories";
 
 type DirectoryItemProps = {
   category: DirectoryCategory;

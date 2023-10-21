@@ -1,14 +1,22 @@
-import { useContext } from "react";
-import PropTypes from "prop-types";
-import { CartContext } from "../contexts/cartContext";
+import React, { FC } from "react";
+import { useDispatch, useSelector } from "react-redux";
+
+import { selectCartItems } from "../store/cart/cart.selector";
+import { addItemToCart } from "../store/cart/cart.action";
+import { CategoryItem } from "../store/categories/category.types";
 
 import Button, { BUTTON_TYPE_CLASSES } from "./button/button.component";
 
-const ProductCard = ({ product }) => {
-  const { name, price, imageUrl } = product;
-  const { addItemToCart } = useContext(CartContext);
+type ProductCardProps = {
+  product: CategoryItem;
+};
 
-  const addProductToCart = () => addItemToCart(product);
+const ProductCard: FC<ProductCardProps> = ({ product }) => {
+  const { name, price, imageUrl } = product;
+  const dispatch = useDispatch();
+  const cartItems = useSelector(selectCartItems);
+
+  const addProductToCart = () => dispatch(addItemToCart(cartItems, product));
 
   return (
     <div className="w-full flex flex-col h-[350px] items-center relative mb-10">
@@ -30,10 +38,6 @@ const ProductCard = ({ product }) => {
       </Button>
     </div>
   );
-};
-
-ProductCard.propTypes = {
-  product: PropTypes.object.isRequired,
 };
 
 export default ProductCard;

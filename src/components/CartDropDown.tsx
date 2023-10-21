@@ -1,29 +1,26 @@
-import { useContext } from "react";
+import React from "react";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { CartContext } from "../contexts/cartContext";
 
 import Button from "./button/button.component";
 import CartItem from "./CartItem";
+import { selectCartItems } from "../store/cart/cart.selector";
 
 const CartDropdown = () => {
-  const { cartItems } = useContext(CartContext);
-  const { setIsCartOpen } = useContext(CartContext);
+  const cartItems = useSelector(selectCartItems);
   const navigate = useNavigate();
 
   const goToCheckoutHandler = () => {
     navigate("/checkout");
-    setIsCartOpen(false);
   };
 
   return (
-    <div className="absolute w-[240px] h-[340px] flex flex-col p-[20px] border border-[#000] bg-[#fff] top-[90px] right-[9rem] md:right-[40px] z-10">
-      <div className="h-[240px] flex flex-col overflow-scroll">
+    <div className="absolute w-60 h-[340px] flex flex-col p-[20px] border border-[#000] bg-[#fff] top-[90px] right-10 z-50">
+      <div className="flex flex-col h-60 overflow-scroll">
         {cartItems.length ? (
           cartItems.map((item) => <CartItem key={item.id} cartItem={item} />)
         ) : (
-          <span className="text-[18px] my-[50px] mx-auto">
-            Your cart is empty
-          </span>
+          <span className="text-lg  my-[50px] mx-auto">Your cart is empty</span>
         )}
       </div>
       <Button onClick={goToCheckoutHandler}>GO TO CHECKOUT</Button>

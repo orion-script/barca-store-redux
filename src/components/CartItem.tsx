@@ -1,6 +1,12 @@
-import React from "react";
+import React, { FC } from "react";
 
-const CartItem = ({ cartItem }) => {
+import { CartItem as TCartItem } from "../store/cart/cart.types";
+
+type CartItemProps = {
+  cartItem: TCartItem;
+};
+
+const CartItem: FC<CartItemProps> = ({ cartItem }) => {
   const { name, imageUrl, price, quantity } = cartItem;
   return (
     <div className="w-full flex h-[80px] mb-[15px]">

@@ -1,19 +1,22 @@
 import React, { useState, useContext } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import NavLayout from "../Layouts/NavLayout";
 import { Link } from "react-router-dom";
 import { FcMenu } from "react-icons/fc";
-import { BsCart } from "react-icons/bs";
 import CartIcon from "./CartIcon";
 import { MdClose } from "react-icons/md";
 import CartDropdown from "./CartDropDown";
-import { signOutUser } from "../utils/firebase";
-import { UserContext } from "../contexts/userContext";
-import { CartContext } from "../contexts/cartContext";
+import { selectIsCartOpen } from "../store/cart/cart.selector";
+import { selectCurrentUser } from "../store/user/user.selector";
+import { signOutStart } from "../store/user/user.action";
 
 function Navbar() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const { currentUser } = useContext(UserContext);
-  const { isCartOpen } = useContext(CartContext);
+  const dispatch = useDispatch();
+  const currentUser = useSelector(selectCurrentUser);
+  const isCartOpen = useSelector(selectIsCartOpen);
+
+  const signOutUser = () => dispatch(signOutStart());
 
   const handleToggleMenu = () => {
     setSidebarOpen(!sidebarOpen);

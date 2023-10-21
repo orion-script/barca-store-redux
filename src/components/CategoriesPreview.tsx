@@ -1,10 +1,16 @@
-import React, { Fragment } from "react";
-import { Link } from "react-router-dom";
+import React, { FC, Fragment } from "react";
 import ProductCard from "./ProductCard";
 import ContainerLayout from "../Layouts/ContainerLayout";
 import Navbar from "./Navbar";
+import { Link } from "react-router-dom";
+import { CategoryItem } from "../store/categories/category.types";
 
-const CategoryPreview = ({ title, products }) => {
+type CategoryPreviewProps = {
+  title: string;
+  products: CategoryItem[];
+};
+
+const CategoryPreview: FC<CategoryPreviewProps> = ({ title, products }) => {
   const linkClassName = title === "coaches" ? "pt-20" : "pt-5";
   return (
     <Fragment>
