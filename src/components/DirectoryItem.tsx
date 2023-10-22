@@ -19,7 +19,7 @@ const DirectoryItem: FC<DirectoryItemProps> = ({ category }) => {
       onClick={onNavigateHandler}
     >
       <div
-        className="w-full h-full bg-cover bg-center transs "
+        className="w-full h-full bg-cover bg-center transform scale-100 hover:scale-110 transition-transform duration-1000 ease-cubic-bezier"
         style={{ backgroundImage: `url(${imageUrl})` }}
       />
       <div className="bg-[#fff] h-[90px] px-[25px] absolute flex flex-col items-center justify-center border border-[#000] opacity-70 hover:opacity-90">
