@@ -47,7 +47,17 @@ import xavi2 from "../assets/xavi-2.jpg";
 import oscar1 from "../assets/oscar-1.jpg";
 import oscar2 from "../assets/oscar-2.webp";
 
-export const SHOP_DATA = [
+export type ShopTypes = {
+  title: string;
+  items: {
+    id: number;
+    name: string;
+    imageUrl: string;
+    price: number;
+  }[];
+};
+
+export const SHOP_DATA: ShopTypes[] = [
   {
     title: "Forwards",
     items: [

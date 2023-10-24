@@ -1,6 +1,10 @@
 import { takeLatest, all, call, put } from "typed-redux-saga";
+import { AnyAction } from "redux";
 
-import { getCategoriesAndDocuments } from "../../utils/firebase";
+import {
+  getCategoriesAndDocuments,
+  addCollectionAndDocuments,
+} from "../../utils/firebase";
 
 import {
   fetchCategoriesSuccess,
@@ -28,3 +32,32 @@ export function* onFetchCategories() {
 export function* categoriesSaga() {
   yield* all([call(onFetchCategories)]);
 }
+
+function* addCategoriesSaga(action: AnyAction) {
+  try {
+    // Extract the categories from the action payload.
+    const categories = action.payload;
+
+    // Call your Firebase function to add the categories.
+    yield call(addCollectionAndDocuments, "categories", categories);
+
+    // Dispatch a success action if needed.
+  } catch (error) {
+    // Handle errors and dispatch a failure action if needed.
+  }
+}
+
+export function* watchAddCategories() {
+  yield takeLatest(CATEGORIES_ACTION_TYPES.ADD_CATEGORIES, addCategoriesSaga);
+}
+
+console.log("Hello from category.saga.ts");
+console.log("CATEGORIES_ACTION_TYPES: ", CATEGORIES_ACTION_TYPES);
+console.log("fetchCategoriesSuccess: ", fetchCategoriesSuccess);
+console.log("fetchCategoriesFailed: ", fetchCategoriesFailed);
+console.log("fetchCategoriesAsync: ", fetchCategoriesAsync);
+console.log("onFetchCategories: ", onFetchCategories);
+console.log("categoriesSaga: ", categoriesSaga);
+console.log("addCategoriesSaga: ", addCategoriesSaga);
+console.log("watchAddCategories: ", watchAddCategories);
+console.log("takeLatest: ", takeLatest);

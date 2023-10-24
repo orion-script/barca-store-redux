@@ -37,3 +37,10 @@ export const fetchCategoriesFailed = withMatcher(
   (error: Error): FetchCategoriesFailed =>
     createAction(CATEGORIES_ACTION_TYPES.FETCH_CATEGORIES_FAILED, error)
 );
+
+export const addCategories = withMatcher(
+  (
+    categories: Category[]
+  ): ActionWithPayload<CATEGORIES_ACTION_TYPES.ADD_CATEGORIES, Category[]> =>
+    createAction(CATEGORIES_ACTION_TYPES.ADD_CATEGORIES, categories)
+);
