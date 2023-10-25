@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectCartItems } from "../store/cart/cart.selector";
 import { addItemToCart, clearItemFromCart } from "../store/cart/cart.action";
 import { CategoryItem } from "../store/categories/category.types";
-
+import { SHOP_DATA } from "../utils/db";
 import Button, { BUTTON_TYPE_CLASSES } from "./button/button.component";
 
 type ProductCardProps = {
@@ -15,6 +15,8 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
   const dispatch = useDispatch();
   const { name, price, imageUrl } = product;
   const cartItems = useSelector(selectCartItems);
+
+  console.log(SHOP_DATA);
 
   const addProductToCart = () => dispatch(addItemToCart(cartItems, product));
   const removeProductFromCart = () =>
