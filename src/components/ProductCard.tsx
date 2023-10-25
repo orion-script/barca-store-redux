@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { selectCartItems } from "../store/cart/cart.selector";
-import { addItemToCart } from "../store/cart/cart.action";
+import { addItemToCart, clearItemFromCart } from "../store/cart/cart.action";
 import { CategoryItem } from "../store/categories/category.types";
 
 import Button, { BUTTON_TYPE_CLASSES } from "./button/button.component";
@@ -12,12 +12,13 @@ type ProductCardProps = {
 };
 
 const ProductCard: FC<ProductCardProps> = ({ product }) => {
-  const { name, price, imageUrl } = product;
   const dispatch = useDispatch();
+  const { name, price, imageUrl } = product;
   const cartItems = useSelector(selectCartItems);
 
   const addProductToCart = () => dispatch(addItemToCart(cartItems, product));
-
+  const removeProductFromCart = () =>
+    dispatch(clearItemFromCart(cartItems, product));
   return (
     <div className="w-full flex flex-col h-[350px] items-center relative mb-10">
       <img
@@ -29,13 +30,24 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
         <span className="w-[90%] mb-[15px]">{name}</span>
         <span className="w-[10%]">{price}</span>
       </div>
-      <Button
-        buttonType={BUTTON_TYPE_CLASSES.inverted}
-        onClick={addProductToCart}
-        className="absolute w-[80%] opacity-70 top-[255px] hidden hover:opacity-90 hover:flex"
-      >
-        Add to cart
-      </Button>
+
+      {cartItems && cartItems.find((item) => item.id === product.id) ? (
+        <Button
+          buttonType={BUTTON_TYPE_CLASSES.inverted}
+          onClick={removeProductFromCart}
+          className="absolute w-[80%] opacity-70 top-[255px] hidden hover:opacity-90 hover:flex"
+        >
+          Remove from cart
+        </Button>
+      ) : (
+        <Button
+          buttonType={BUTTON_TYPE_CLASSES.inverted}
+          onClick={addProductToCart}
+          className="absolute w-[80%] opacity-70 top-[255px] hidden hover:opacity-90 hover:flex"
+        >
+          Add to cart
+        </Button>
+      )}
     </div>
   );
 };

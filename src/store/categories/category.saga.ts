@@ -50,14 +50,3 @@ function* addCategoriesSaga(action: AnyAction) {
 export function* watchAddCategories() {
   yield takeLatest(CATEGORIES_ACTION_TYPES.ADD_CATEGORIES, addCategoriesSaga);
 }
-
-console.log("Hello from category.saga.ts");
-console.log("CATEGORIES_ACTION_TYPES: ", CATEGORIES_ACTION_TYPES);
-console.log("fetchCategoriesSuccess: ", fetchCategoriesSuccess);
-console.log("fetchCategoriesFailed: ", fetchCategoriesFailed);
-console.log("fetchCategoriesAsync: ", fetchCategoriesAsync);
-console.log("onFetchCategories: ", onFetchCategories);
-console.log("categoriesSaga: ", categoriesSaga);
-console.log("addCategoriesSaga: ", addCategoriesSaga);
-console.log("watchAddCategories: ", watchAddCategories);
-console.log("takeLatest: ", takeLatest);
