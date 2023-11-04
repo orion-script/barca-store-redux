@@ -18,7 +18,9 @@ const CartIcon = () => {
       onClick={toggleIsCartOpen}
     >
       <BsCart className="h-6 w-6" />
-      <span className="absolute text-xs font-bold bottom-3">{cartCount}</span>
+      <span className="absolute text-xs font-bold bottom-[15px]">
+        {cartCount}
+      </span>
     </div>
   );
 };
