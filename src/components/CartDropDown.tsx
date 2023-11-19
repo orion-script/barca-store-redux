@@ -21,7 +21,7 @@ const CartDropdown = () => {
   };
 
   return (
-    <div className="absolute w-60 h-[340px] flex flex-col p-[20px] border border-[#000] bg-[#fff] top-[90px] right-40 md:right-10 z-50">
+    <div className="absolute w-[350px] md:w-60 h-[340px] flex flex-col p-[20px] border border-[#000] bg-[#fff] top-[70px] md:top-[90px] md:right-10 z-50">
       <div className="flex flex-col h-60 overflow-scroll">
         {cartItems.length ? (
           cartItems.map((item) => <CartItem key={item.id} cartItem={item} />)
