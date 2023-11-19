@@ -5,7 +5,18 @@ export default {
     fontFamily: {
       fira: ["Fira Code monospace"],
     },
-    extend: {},
+    extend: {
+      keyframes: {
+        dropdown: {
+          "0%": { transform: "translateY(-3rem)" },
+          "100%": { transform: "translateY(0)" },
+        },
+      },
+
+      animation: {
+        dropdown: "dropdown 1s ease-in-out",
+      },
+    },
   },
   plugins: [],
 };

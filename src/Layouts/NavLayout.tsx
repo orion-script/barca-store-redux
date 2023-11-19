@@ -4,7 +4,7 @@ interface navlayout {
 }
 const styles = {
   parentContainer: "w-full h-full",
-  container: "w-full 2xl:container 2xl:mx-auto",
+  container: "w-full h-full 2xl:container 2xl:mx-auto",
 };
 const NavLayout = ({ children }: navlayout) => {
   return (

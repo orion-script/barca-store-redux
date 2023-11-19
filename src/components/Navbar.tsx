@@ -2,9 +2,7 @@ import React, { useState, useContext } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import NavLayout from "../Layouts/NavLayout";
 import { Link } from "react-router-dom";
-import { FcMenu } from "react-icons/fc";
 import CartIcon from "./CartIcon";
-import { MdClose } from "react-icons/md";
 import CartDropdown from "./CartDropDown";
 import { selectIsCartOpen } from "../store/cart/cart.selector";
 import { selectCurrentUser } from "../store/user/user.selector";
@@ -29,19 +27,18 @@ function Navbar() {
             <a href="/shop">SHOP</a>
           </li>
           {currentUser ? (
-            <Link to="" onClick={signOutUser} className="mx-10">
+            <Link to="" onClick={signOutUser} className="mx-5 md:mx-10">
               SIGN OUT
             </Link>
           ) : (
-            <Link to="/login" className="mx-10">
+            <Link to="/login" className="mx-5 md:mx-10">
               SIGN IN
             </Link>
           )}
           <CartIcon />
         </ul>
-
-        {isCartOpen && <CartDropdown />}
       </nav>
+      {isCartOpen && <CartDropdown />}
     </NavLayout>
   );
 }
