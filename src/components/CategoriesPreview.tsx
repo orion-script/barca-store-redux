@@ -16,7 +16,7 @@ const CategoryPreview: FC<CategoryPreviewProps> = ({ title, products }) => {
     <Fragment>
       <Navbar />
       <ContainerLayout>
-        <div className="w-11/12 md:w-full h-auto m-auto md:m-0 flex flex-col mb-[30px]">
+        <div className="w-11/12 md:w-full h-auto m-auto md:m-0 flex flex-col mb-[30px] pb-5">
           <h2 className={linkClassName}>
             <Link className="text-[28px] mb-[25px] cursor-pointer" to={title}>
               {title.toUpperCase()}

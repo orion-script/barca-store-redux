@@ -37,7 +37,7 @@ const Category = () => {
         {isLoading ? (
           <Spinner />
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-x-5 gap-y-12">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-x-5 gap-y-12 pb-5">
             {products &&
               products.map((product) => (
                 <ProductCard key={product.id} product={product} />
