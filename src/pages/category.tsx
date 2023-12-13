@@ -31,13 +31,13 @@ const Category = () => {
     <Fragment>
       <Navbar />
       <ContainerLayout>
-        <h2 className="text-[38px] mb-[25px] text-center">
+        <h2 className="text-[32px] mt-20 mb-[25px] text-center">
           {category.toUpperCase()}
         </h2>
         {isLoading ? (
           <Spinner />
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-x-5 gap-y-12 pb-5">
+          <div className="w-11/12 m-auto md:m-0 md:w-full grid grid-cols-1 md:grid-cols-4 gap-x-[20px] gap-y-[50px]">
             {products &&
               products.map((product) => (
                 <ProductCard key={product.id} product={product} />
