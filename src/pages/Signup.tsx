@@ -1,7 +1,6 @@
 import React, { useState, FormEvent, ChangeEvent } from "react";
 import AuthLayout from "../Layouts/AuthLayout";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
 import { TOAST_MESSAGES } from "../utils/toastMessages";
 import { useNavigate } from "react-router-dom";
 import {
@@ -10,7 +9,7 @@ import {
 } from "../utils/firebase";
 import FormInput from "../components/formInput";
 import Button from "../components/button/button.component";
-import { UserCredential } from "firebase/auth"; // Import UserCredential type
+import { UserCredential } from "firebase/auth";
 
 interface FormFields {
   displayName: string;
@@ -72,7 +71,6 @@ const SignUp: React.FC = () => {
   return (
     <AuthLayout>
       <div className="w-full h-full pt-16 md:pt-10">
-        <ToastContainer />
         <h1 className="text-center text-xl">Sign-Up Form</h1>
         <form onSubmit={handleSubmit}>
           <FormInput

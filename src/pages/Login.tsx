@@ -1,7 +1,6 @@
 import React, { useState, FormEvent, ChangeEvent } from "react";
 import AuthLayout from "../Layouts/AuthLayout";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { toast } from 'react-toastify';
 import { TOAST_MESSAGES } from "../utils/toastMessages";
 import { useNavigate } from "react-router-dom";
 import FormInput from "../components/formInput";
@@ -33,6 +32,7 @@ function Login() {
 
   const signInWithGoogle = async () => {
     await signInWithGooglePopup();
+    toast.success(TOAST_MESSAGES.LOGINSUCCESS);
     navigate("/");
   };
 
@@ -52,12 +52,12 @@ function Login() {
         case "auth/user-not-found":
           toast.error(TOAST_MESSAGES.USERNOTFOUND);
           break;
-        case "auth/invalid-login-credentials":
+        case "auth/invalid-credential":
           toast.error(TOAST_MESSAGES.INVALIDLOGINCREDENTIALS);
           break;
         default:
           toast.error(error.messasge);
-        // console.log(error);
+        console.log(error);
       }
     }
   };
@@ -71,7 +71,6 @@ function Login() {
   return (
     <AuthLayout>
       <div className="w-full h-full pt-20 md:pt-10">
-        <ToastContainer />
         <h1 className="text-center text-xl">Sign-In Form</h1>
         <form onSubmit={handleSubmit}>
           <FormInput
