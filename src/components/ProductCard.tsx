@@ -35,7 +35,7 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
             ? removeProductFromCart
             : addProductToCart
         }
-        className="absolute w-[70%] opacity-70 top-[255px] hover:opacity-90"
+        className="absolute w-[80%] opacity-70 top-[255px] hidden hover:opacity-90 hover:flex"
       >
         {cartItems && cartItems.find((item) => item.id === product.id)
           ? "Remove from cart"
@@ -46,3 +46,6 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
 };
 
 export default ProductCard;
+
+
+// transform scale-100 hover:scale-110 transition-transform duration-1000 ease-cubic-bezier

@@ -31,14 +31,24 @@ import { Category } from "../store/categories/category.types";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+// const firebaseConfig = {
+//   apiKey: "AIzaSyDu00l11z0gjP4zkvc9Wdb_udzC1Ig_LzI",
+//   authDomain: "barca-store-db.firebaseapp.com",
+//   projectId: "barca-store-db",
+//   storageBucket: "barca-store-db.appspot.com",
+//   messagingSenderId: "286255667783",
+//   appId: "1:286255667783:web:90a16270da6896fc10af62",
+//   measurementId: "G-JQ6CEXKMVH",
+// };
+
 const firebaseConfig = {
-  apiKey: "AIzaSyDu00l11z0gjP4zkvc9Wdb_udzC1Ig_LzI",
-  authDomain: "barca-store-db.firebaseapp.com",
-  projectId: "barca-store-db",
-  storageBucket: "barca-store-db.appspot.com",
-  messagingSenderId: "286255667783",
-  appId: "1:286255667783:web:90a16270da6896fc10af62",
-  measurementId: "G-JQ6CEXKMVH",
+  apiKey: "AIzaSyA_IHyZhx_3bjj-ajXqGxBg3YPZPjaBvvc",
+  authDomain: "barca-store-redux.firebaseapp.com",
+  projectId: "barca-store-redux",
+  storageBucket: "barca-store-redux.appspot.com",
+  messagingSenderId: "3698291437",
+  appId: "1:3698291437:web:4711b4284426df918912e4",
+  measurementId: "G-TYPMTGCJM9"
 };
 
 // Initialize Firebase
