@@ -12,6 +12,8 @@ type CategoryPreviewProps = {
 
 const CategoryPreview: FC<CategoryPreviewProps> = ({ title, products }) => {
   const linkClassName = title === "coaches" ? "pt-20" : "pt-5";
+
+  console.log(products);
   return (
     <Fragment>
       <Navbar />

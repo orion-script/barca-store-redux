@@ -7,7 +7,7 @@ import raph2 from "../assets/raph-2.png";
 import felix1 from "../assets/felix-1.jpg";
 import felix2 from "../assets/felix-2.jpg";
 import yamal1 from "../assets/yamal-1.png";
-import yamal2 from "../assets/yamal-3.jpg";
+import yamal2 from "../assets/yamal-2.jpg";
 import ansu1 from "../assets/ansu-1.jpg";
 import ansu2 from "../assets/ansu-2.jpg";
 import gund1 from "../assets/gundo-1.png";

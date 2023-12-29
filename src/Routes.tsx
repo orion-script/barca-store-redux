@@ -4,6 +4,7 @@ import Login from "./pages/Login";
 import SignUp from "./pages/Signup";
 import Shop from "./pages/shop";
 import CheckoutPage from "./pages/Checkout";
+import Payment from "./pages/Payment";
 import Home from "./pages/Home";
 
 const AppRoutes = () => {
@@ -15,6 +16,7 @@ const AppRoutes = () => {
         <Route path="shop/*" element={<Shop />} />
         <Route path="/register" element={<SignUp />} />
         <Route path="/checkout" element={<CheckoutPage />} />
+        <Route path="/payment" element={<Payment />} />
       </Routes>
     </BrowserRouter>
   );

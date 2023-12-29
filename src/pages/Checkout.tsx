@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import { useNavigate } from "react-router-dom";
 import ContainerLayout from "../Layouts/ContainerLayout";
 import Navbar from "../components/Navbar";
 import { useSelector } from "react-redux";
@@ -6,10 +7,16 @@ import { useSelector } from "react-redux";
 import { selectCartItems, selectCartTotal } from "../store/cart/cart.selector";
 
 import CheckoutItem from "../components/CheckoutItem";
+import Button from "../components/button/button.component";
 
 const Checkout = () => {
   const cartItems = useSelector(selectCartItems);
   const cartTotal = useSelector(selectCartTotal);
+  const navigate = useNavigate();
+
+  const goToPayment = () => {
+    navigate("/payment");
+  };
 
   return (
     <Fragment>
@@ -48,6 +55,10 @@ const Checkout = () => {
           <span className="mt-[30px] ml-auto text-[36px]">
             Total: ${cartTotal}
           </span>
+        </div>
+
+        <div className="mt-10">
+          <Button onClick={goToPayment}>PROCEED TO PAYMENT</Button>
         </div>
       </ContainerLayout>
     </Fragment>

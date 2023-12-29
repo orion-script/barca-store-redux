@@ -101,7 +101,7 @@ const SignUp: React.FC = () => {
           />
 
           <FormInput
-            label="Confirm Password*"
+            label="Confirm Password"
             type="password"
             required
             onChange={handleChange}

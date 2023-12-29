@@ -3,7 +3,7 @@ import { AnyAction } from "redux";
 
 import {
   getCategoriesAndDocuments,
-  addCollectionAndDocuments,
+  // addCollectionAndDocuments,
 } from "../../utils/firebase";
 
 import {
@@ -39,7 +39,7 @@ function* addCategoriesSaga(action: AnyAction) {
     const categories = action.payload;
 
     // Call your Firebase function to add the categories.
-    yield call(addCollectionAndDocuments, "categories", categories);
+    // yield call(addCollectionAndDocuments, "categories", categories);
 
     // Dispatch a success action if needed.
   } catch (error) {

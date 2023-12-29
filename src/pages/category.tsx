@@ -26,7 +26,6 @@ const Category = () => {
   useEffect(() => {
     setProducts(categoriesMap[category]);
   }, [category, categoriesMap]);
-  
   console.log("CategoriesMap", categoriesMap)
 
 
