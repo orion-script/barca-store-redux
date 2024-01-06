@@ -57,7 +57,6 @@ function Login() {
           break;
         default:
           toast.error(error.messasge);
-        console.log(error);
       }
     }
   };
