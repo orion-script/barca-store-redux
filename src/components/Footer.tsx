@@ -6,11 +6,11 @@ function Footer() {
       <p className="pb-1">
         Designed By{" "}
         <a
-          href="https://github.com/Hadestech01"
+          href="https://github.com/orion-script"
           target="_blank"
           className="border-b-2 border-gray-800 italic"
         >
-          HadesCodes
+          OrionCodes
         </a>
       </p>
     </footer>

@@ -48,7 +48,7 @@ const firebaseConfig = {
   storageBucket: "barca-store-redux.appspot.com",
   messagingSenderId: "3698291437",
   appId: "1:3698291437:web:4711b4284426df918912e4",
-  measurementId: "G-TYPMTGCJM9"
+  measurementId: "G-TYPMTGCJM9",
 };
 
 // Initialize Firebase
