@@ -14,7 +14,7 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
   const { name, price, imageUrl } = product;
   const cartItems = useSelector(selectCartItems);
 
-  console.log("product", product);
+  // console.log("product", product);
 
   const addProductToCart = () => dispatch(addItemToCart(cartItems, product));
   const removeProductFromCart = () =>

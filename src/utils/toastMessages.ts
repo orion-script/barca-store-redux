@@ -8,4 +8,5 @@ export const TOAST_MESSAGES = {
   INCORRECTPASSWORDFOREMAIL: "Incorrect password for this email.",
   USERNOTFOUND: "User not found.",
   INVALIDLOGINCREDENTIALS: "Invalid login credentials.",
+  PASSWORD_RESET_EMAIL_SENT: "Password reset email sent. Check your inbox.",
 };

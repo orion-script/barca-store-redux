@@ -1,6 +1,7 @@
 import React, { useState, FormEvent, ChangeEvent } from "react";
+import { Link } from "react-router-dom";
 import AuthLayout from "../Layouts/AuthLayout";
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
 import { TOAST_MESSAGES } from "../utils/toastMessages";
 import { useNavigate } from "react-router-dom";
 import FormInput from "../components/formInput";
@@ -88,6 +89,9 @@ function Login() {
             name="password"
             value={password}
           />
+          <div className="w-full text-end">
+            <Link to="/reset">Forgot your password?</Link>
+          </div>
           <div className="flex justify-start mt-10">
             <Button type="submit">Sign In</Button>
             <Button

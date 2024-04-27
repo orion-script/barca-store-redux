@@ -13,6 +13,8 @@ const Shop = () => {
     dispatch(fetchCategoriesStart());
   }, []);
 
+  console.log("shop", fetchCategoriesStart());
+
   return (
     <Routes>
       <Route index element={<CategoriesPreview />} />
