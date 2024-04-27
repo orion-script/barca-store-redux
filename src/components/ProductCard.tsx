@@ -12,6 +12,7 @@ type ProductCardProps = {
 const ProductCard: FC<ProductCardProps> = ({ product }) => {
   const dispatch = useDispatch();
   const { name, price, imageUrl } = product;
+  console.log("imageUrl", imageUrl);
   const cartItems = useSelector(selectCartItems);
 
   // console.log("product", product);
@@ -48,6 +49,5 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
 };
 
 export default ProductCard;
-
 
 // transform scale-100 hover:scale-110 transition-transform duration-1000 ease-cubic-bezier

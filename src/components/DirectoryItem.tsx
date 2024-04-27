@@ -9,6 +9,7 @@ type DirectoryItemProps = {
 
 const DirectoryItem: FC<DirectoryItemProps> = ({ category }) => {
   const { imageUrl, title, route } = category;
+  console.log("imageUrl", imageUrl);
   const navigate = useNavigate();
 
   const onNavigateHandler = () => navigate(route);

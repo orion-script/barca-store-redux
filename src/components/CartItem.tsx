@@ -8,6 +8,8 @@ type CartItemProps = {
 
 const CartItem: FC<CartItemProps> = ({ cartItem }) => {
   const { name, imageUrl, price, quantity } = cartItem;
+
+  console.log("imageUrl", imageUrl);
   return (
     <div className="w-full flex h-[80px] mb-[15px]">
       <img src={imageUrl} alt={`${name}`} className="w-[30%]" />
