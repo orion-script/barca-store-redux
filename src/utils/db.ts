@@ -46,6 +46,8 @@ import xavi1 from "../assets/xavi-1.jpg";
 import xavi2 from "../assets/xavi-2.jpg";
 import oscar1 from "../assets/oscar-1.jpg";
 import oscar2 from "../assets/oscar-2.webp";
+import vitor1 from "../assets/vitor-1.jpg";
+import vitor2 from "../assets/vitor-2.jpg";
 
 export type ShopTypes = {
   title: string;
@@ -131,6 +133,18 @@ export const SHOP_DATA: ShopTypes[] = [
         id: 12,
         name: "Ansu Fati",
         imageUrl: ansu2,
+        price: 14,
+      },
+      {
+        id: 13,
+        name: "Vitor Roque",
+        imageUrl: vitor2,
+        price: 12,
+      },
+      {
+        id: 14,
+        name: "Vitor Roque",
+        imageUrl: vitor1,
         price: 14,
       },
     ],

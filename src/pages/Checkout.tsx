@@ -57,7 +57,7 @@ const Checkout = () => {
           </span>
         </div>
 
-        <div className="mt-10">
+        <div className="">
           <Button onClick={goToPayment}>PROCEED TO PAYMENT</Button>
         </div>
       </ContainerLayout>
